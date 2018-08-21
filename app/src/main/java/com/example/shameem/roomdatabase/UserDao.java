@@ -2,6 +2,9 @@ package com.example.shameem.roomdatabase;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.Query;
+
+import java.util.List;
 
 /**
  *
@@ -12,6 +15,10 @@ import android.arch.persistence.room.Insert;
 public interface UserDao {
 
     @Insert
-    public void addUser(UserModel userModel);
+     void addUser(UserModel userModel);
+
+
+    @Query("select * from user")
+     List<UserModel> getAllUsers();
 
 }

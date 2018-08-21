@@ -10,7 +10,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-   // public static  MyAppDatabase myAppDatabase;
+   //  public static  MyAppDatabase myAppDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout_container, fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 

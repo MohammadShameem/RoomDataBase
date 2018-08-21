@@ -1,6 +1,7 @@
 package com.example.shameem.roomdatabase;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -47,18 +48,26 @@ public class AddUserFragment extends Fragment implements View.OnClickListener {
                int userId= Integer.parseInt(editTextUserId.getText().toString());
                String userName=editTextName.getText().toString();
                String userEmail=editTextEmail.getText().toString();
+               final UserModel userModel=new UserModel();
+                userModel.setUserId(userId);
+                userModel.setUserName(userName);
+                userModel.setUserEmail(userEmail);
 
-               UserModel userModel=new UserModel();
-               userModel.setUserId(userId);
-               userModel.setUserName(userName);
-               userModel.setUserEmail(userEmail);
+                AsyncTask.execute(new Runnable() {
+                    @Override
+                    public void run() {
 
-               MyAppDatabase.getAppDatabase(getContext()).userDao().addUser(userModel);
+
+                        MyAppDatabase.getAppDatabase(getContext()).userDao().addUser(userModel);
+
+                    }
+                });
 
                 Log.d("user","user added successfully");
 
-
-
+                editTextUserId.setText("");
+                editTextName.setText("");
+                editTextEmail.setText("");
 
 
                 break;
