@@ -14,7 +14,7 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = TableNames.USER)
 public class UserModel {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int mUserId;
 
     @ColumnInfo(name = ColumnNames.USER_NAME)

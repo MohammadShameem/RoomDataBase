@@ -15,7 +15,7 @@ import android.widget.Button;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
-   private Button  buttonAddUser,buttonReadData;
+   private Button  buttonAddUser,buttonReadData,buttonUpdateHome;
 
 
     public HomeFragment() {
@@ -31,8 +31,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         buttonAddUser=view.findViewById(R.id.button_insert_data);
         buttonReadData=view.findViewById(R.id.button_read_data);
+        buttonUpdateHome=view.findViewById(R.id.button_update_home);
+
 
         buttonAddUser.setOnClickListener(this);
+        buttonUpdateHome.setOnClickListener(this);
         buttonReadData.setOnClickListener(this);
 
         return view;
@@ -54,6 +57,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 ((MainActivity)getActivity()).loadFragment(readUsersFragment);
 
                 break;
+
+            case R.id.button_update_home:
+                UpdateUserFragment updateUserFragment= new UpdateUserFragment();
+                ((MainActivity)getActivity()).loadFragment(updateUserFragment);
+                break;
+
         }
 
     }

@@ -18,7 +18,7 @@
         android:layout_marginTop="16dp"
         />
     <Button
-        android:id="@+id/button_update_data"
+        android:id="@+id/button_update_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="@string/text_button_read_data"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/button_update_data"
+        app:layout_constraintTop_toBottomOf="@+id/button_update_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -40,7 +40,7 @@
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_button_read_data"
+        android:text="@string/text_button_update"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/button_read_data"
         app:layout_constraintEnd_toEndOf="parent"

@@ -45,7 +45,15 @@ public class ReadUsersFragment extends Fragment {
                     info=info+"\n"+id+"\n"+name+"\n"+email+"\n";
                 }
 
-                textView.setText(info);
+
+                final String finalInfo = info;
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        textView.setText(finalInfo);
+                    }
+                });
 
             }
         });
