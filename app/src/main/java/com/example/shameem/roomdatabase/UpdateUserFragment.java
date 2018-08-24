@@ -45,20 +45,27 @@ public class UpdateUserFragment extends Fragment implements View.OnClickListener
         switch (view.getId()) {
             case R.id.button_update_user:
 
-                int userId= Integer.parseInt(editTextUserId.getText().toString());
-                String userName=editTextName.getText().toString();
-                String userEmail=editTextEmail.getText().toString();
+                final int userId= Integer.parseInt(editTextUserId.getText().toString());
+                final String userName=editTextName.getText().toString();
+                final String userEmail=editTextEmail.getText().toString();
+
+
+                /*
+
                 final UserModel userModel=new UserModel();
                 userModel.setUserId(userId);
-                userModel.setUserName(userName);
-                userModel.setUserEmail(userEmail);
+                userModel.setUserName(userName);*/
+              //  userModel.setUserEmail(userEmail);
 
                 AsyncTask.execute(new Runnable() {
                     @Override
                     public void run() {
 
 
-                        MyAppDatabase.getAppDatabase(getContext()).userDao().updateUser(userModel);
+                      //  MyAppDatabase.getAppDatabase(getContext()).userDao().updateUser(userModel);
+
+
+                        MyAppDatabase.getAppDatabase(getContext()).userDao().updateUserDetails(userName,userEmail,userId);
 
                     }
                 });

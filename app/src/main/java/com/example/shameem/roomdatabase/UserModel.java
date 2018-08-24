@@ -15,6 +15,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class UserModel {
 
     @PrimaryKey
+    @ColumnInfo(name = ColumnNames.USER_ID)
     private int mUserId;
 
     @ColumnInfo(name = ColumnNames.USER_NAME)

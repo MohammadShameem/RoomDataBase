@@ -22,7 +22,17 @@ public interface UserDao {
     @Query("select * from user")
      List<UserModel> getAllUsers();
 
-    @Update
-    void updateUser(UserModel userModel);
+
+  /*  @Update
+    void updateUser(UserModel userModel);*/
+
+
+
+    @Query(" update user set "+ColumnNames.USER_NAME +" =:userName "+ ","+ColumnNames.USER_EMAIL+
+            " =:email " + " where "+ColumnNames.USER_ID+" =:userId ")
+    int updateUserDetails(String userName,String email,int userId);
+
+
+
 
 }
