@@ -22,6 +22,9 @@ public interface UserDao {
     @Query("select * from user")
      List<UserModel> getAllUsers();
 
+    @Query("select * from user where "+ ColumnNames.USER_ID+" =:userId ")
+    UserModel getUserById(int userId);
+
 
   /*  @Update
     void updateUser(UserModel userModel);*/
