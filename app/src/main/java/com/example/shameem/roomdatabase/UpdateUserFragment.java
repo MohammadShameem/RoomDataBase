@@ -46,7 +46,7 @@ public class UpdateUserFragment extends Fragment implements View.OnClickListener
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        showUserData();
+         showUserData();
     }
 
     private void showUserData(){
@@ -83,22 +83,22 @@ public class UpdateUserFragment extends Fragment implements View.OnClickListener
                 final String userEmail=editTextEmail.getText().toString();
 
 
-                /*
 
-                final UserModel userModel=new UserModel();
-                userModel.setUserId(userId);
-                userModel.setUserName(userName);*/
-              //  userModel.setUserEmail(userEmail);
 
                 AsyncTask.execute(new Runnable() {
                     @Override
                     public void run() {
 
+                        //   final UserModel userModel=new UserModel();
+                        final  UserModel  userModel1= MyAppDatabase.getAppDatabase(getContext()).userDao().getUserById(2);
+                        userModel1.setUserId(userModel1.getUserId());
+                        //  userModel1.setUserName(userName);
+                        userModel1.setUserEmail(userEmail);
 
-                      //  MyAppDatabase.getAppDatabase(getContext()).userDao().updateUser(userModel);
+                      MyAppDatabase.getAppDatabase(getContext()).userDao().updateUser(userModel1);
 
 
-                        MyAppDatabase.getAppDatabase(getContext()).userDao().updateUserDetails(userName,userEmail,userId);
+                        //MyAppDatabase.getAppDatabase(getContext()).userDao().updateUserDetails(userName,userEmail,userId);
 
                     }
                 });
